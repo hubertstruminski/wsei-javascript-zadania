@@ -10,13 +10,22 @@ let interval = setInterval(function() {
 
 //Zadanie 2
 const array = ["a", "b", "c", "d", "e", "f", "g", "h"];
+
+let timeout = setTimeout(iterate, 2000);
+let flag = false;
 function iterate() {
     for(let i=0; i<array.length; i++) {
         process.stdout.write(array[i]);
+        if(i === array.length - 1) {
+            flag = true;
+        }     
     }
-    console.log();
+    if(flag) {
+        console.log();
+        clearTimeout(timeout);
+    }
 }
-let timeout = setTimeout(iterate, 2000);
+
 
 let count2 = 0;
 let interval2 = setInterval(function() {
