@@ -26,7 +26,6 @@ function iterate() {
     }
 }
 
-
 let count2 = 0;
 let interval2 = setInterval(function() {
     console.log(array[count2]);
