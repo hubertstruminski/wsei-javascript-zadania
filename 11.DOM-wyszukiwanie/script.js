@@ -13,20 +13,19 @@ returnTags('list');
 const idList = document.getElementById('list');
 
 //Zadanie 4
-function showTags(result) {
-    console.log(result);
+function showTags(selector) {
+    const result = document.querySelectorAll(selector);
+    result.forEach(element => {
+        console.log(element);
+    });
 }
 //1
-const li = document.getElementsByTagName('li');
-showTags(li);
-
+showTags('li');
 //2
-const ul = document.getElementsByTagName('ul');
-const resultUl = ul[0].outerHTML + ul[1].outerHTML;
-showTags(resultUl);
-
-// const spans = document.getElementsByTagName('span');
-// showTags(spans);
-
-// const divWithListClass = document.getElementsByClassName('list');
-// showTags(divWithListClass);
+showTags('ul');
+//3
+showTags('span');
+//4
+showTags('div.list > span');
+//5
+showTags('div#spans > span');

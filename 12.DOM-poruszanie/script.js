@@ -109,4 +109,17 @@ changeBCForFirstChild('#ex5 > ul');
 
 //1
 const result1 = document.querySelectorAll('#ex6 > div:first-child > div:first-child > div:first-child');
-const result2 = document.querySelectorAll('#ex6')
+
+//2
+const firstChildEx6 = document.querySelector('#ex6 > div:first-child');
+const firstParentEx6 = firstChildEx6.closest('div');
+const twoNextChildrenEx6 = firstParentEx6.querySelector('div:first-child > div:first-child');
+const siblingNextEx6 = twoNextChildrenEx6.nextElementSibling;
+const result2 = siblingNextEx6.parentNode;
+
+//3
+const ex6 = document.querySelector('#ex6');
+const bodyEx6 = ex6.parentNode;
+const divFoo = bodyEx6.querySelector('div:first-child');
+const parentDivFoo = divFoo.parentNode;
+const result3 = parentDivFoo.querySelector('div:nth-child(2) > div:first-child > div:first-child > div:first-child');
