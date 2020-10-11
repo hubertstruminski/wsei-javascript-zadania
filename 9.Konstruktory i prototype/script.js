@@ -106,25 +106,27 @@ calculator2.division(10, 1);
 calculator2.toString();
 
 var interval = null;
+
 //Zadanie 3
-function Game() {
-    this.checkNumber = function() {
+class Game {
+    constructor() {
+        this.number = 0;
+    }
+    checkNumber(interval) {
         if(this.number > 5) {
-            console.log("Higher");
             clearInterval(interval);
         }
     }
-    this.randomNumber = function() {
-        interval = setInterval(function() {
-            let randomNumber = Math.floor(Math.random() * 10) + 1
-            this.number = randomNumber;
-    
-            console.log(this.number);
-        }, 1000);
+    randomNumber() {
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        this.number = randomNumber;
+
+        console.log(this.number);
+        clearInterval(interval);
+        interval = setInterval(this.randomNumber.bind(this), 1000);
+        this.checkNumber(interval);
     }
 }
-Game.prototype.number = 0;
-
 
 let game = new Game();
 game.randomNumber();
