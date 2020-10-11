@@ -121,7 +121,6 @@ class Game {
         let randomNumber = Math.floor(Math.random() * 10) + 1;
         this.number = randomNumber;
 
-        console.log(this.number);
         clearInterval(interval);
         interval = setInterval(this.randomNumber.bind(this), 1000);
         this.checkNumber(interval);
