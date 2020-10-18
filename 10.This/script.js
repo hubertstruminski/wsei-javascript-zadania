@@ -79,3 +79,46 @@ class Calculator {
         return this.a / this.b;
     }
 }
+
+//Zadanie 4
+const ladder = {
+    currentStep: 0,
+    maxStepNumber: 10,
+    minStepNumber: 0
+}
+
+function up(ladder) {
+    if(ladder.currentStep === ladder.maxStepNumber) {
+        console.log("I can't go up.");
+        return;
+    } 
+    ladder.currentStep++;
+}
+
+function down(ladder) {
+    if(ladder.currentStep === ladder.minStepNumber) {
+        console.log("I can't go down.");
+        return;
+    }
+    ladder.currentStep--;
+}
+
+function getCurrentHeightInLadder(ladder) {
+    console.log("I'm at position: " + ladder.currentStep + " in the ladder.");
+}
+
+up(ladder);
+up(ladder);
+up(ladder);
+up(ladder);
+up(ladder);
+up(ladder);
+up(ladder);
+up(ladder);
+up(ladder);
+up(ladder);
+up(ladder);
+down(ladder);
+down(ladder);
+down(ladder);
+getCurrentHeightInLadder(ladder);
